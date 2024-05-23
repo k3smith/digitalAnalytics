@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 40px; /* Increased padding at the top for the title, mission, and vision */
+    padding-bottom: 50px; /* Added padding at the bottom */
+}
+
+p {
+    display: inline-block;
+    margin: auto;
+}
+
+#title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.containerText {
+    width: 90%;
+    margin: auto;
+    background-color: #fff; /* Add any other necessary styles */
+}
+
+.wc-container {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0px 0; /* Adjust padding as needed */
+    margin: 0px 0px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    z-index: 10; /* Ensure it's above the projects container */
+}
+
+#word-cloud {
+    background-color: white;
+    left: 0;
+    right: 0;
+}
+
+#introduction {
+    width: 90%;
+    padding-top: 400px; /* Ensures projects start below mission and vision sections */
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#projects {
+    width: 60%;
+}
+
+#timeline {
+    position: fixed;
+    right: 20%;
+    top: 150px; /* Adjusted to start below the mission and vision sections */
+    width: 10%;
+    height: calc(100% - 250px); /* Subtract space for mission, vision, and padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* Add padding to the top of the timeline */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.project {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-left-width: 5px;
+    position: relative; /* For budget bar positioning */
+}
+
+
+#intro {
+    width: 60%;
+    padding-top: 400px; /* Ensures projects start below mission and vision sections */
+}
+
+#future {
+    width: 60%;
+}
+
+.introText, .futureText {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-left-width: 5px;
+    position: relative; /* For budget bar positioning */
+}
+
+.project .title {
+    font-weight: bold;
+}
+
+.project .budget-bars {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -30%; /* Adjust as necessary */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.project .budget-bar {
+    width: 100px;
+    height: 10px;
+    background-color: rgba(76, 175, 80, 0); /* Start with transparent */
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project .budget-bar .spent {
+    height: 100%;
+    background-color: rgba(76, 175, 80, 1); /* Opaque green */
+    width: 0; /* Start with 0 width, will be updated with JavaScript */
+    transition: width 0.5s; /* Smooth transition */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.highlighted {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    filter: brightness(100%) opacity(0.7); /* Adjust opacity as needed */
+}
+
+#subtotals {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#completed-total,
+#current-total,
+#pending-total,
+#budget-total {
+    content: attr(data-label); /* Use the data-label attribute as content */
+    font-weight: bold;
+    margin-right: 5px;
+}
